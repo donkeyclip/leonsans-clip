@@ -46,7 +46,21 @@ export const scale = (value,selector, duration, easing = "linear") =>
     }
   );
 
-  export const top = (value,selector, duration, easing = "linear") =>
+  export const width = (value,selector, duration, easing = "linear") =>
+  new CSSEffect(
+    {
+      animatedAttrs: {
+        width:value
+      },
+    },
+    {
+      selector,
+      duration,
+      easing,
+    }
+  );
+
+  export const top = (value,selector, duration, easing = "linear",delay=0) =>
   new CSSEffect(
     {
       animatedAttrs: {
@@ -57,6 +71,7 @@ export const scale = (value,selector, duration, easing = "linear") =>
       selector,
       duration,
       easing,
+      delay
     }
   );
 
@@ -129,7 +144,7 @@ export const scale = (value,selector, duration, easing = "linear") =>
   );
   export const wmc = new LeonSans.Clip(
     {
-      canvasId: "leonObj2",
+      canvasId: "leonObj",
       sw: 1340,
       sh: 355,
       text: "WELCOME TO MOTORCORTEX",
@@ -156,7 +171,7 @@ export const scale = (value,selector, duration, easing = "linear") =>
 
   export const inClip = new LeonSans.Clip(
     {
-      canvasId: "leonObj2",
+      canvasId: "leonObj",
       sw: 1340,
       sh: 600,
       text: "In this short clip\nwe will show some\nof the capabilityes\nof our library",
@@ -179,7 +194,110 @@ export const scale = (value,selector, duration, easing = "linear") =>
       containerParams: { width: "1340px", height: "600px" }
     }
   );
+  export const weightClip = new LeonSans.Clip(
+    {
+      canvasId: "leonObj",
+      sw: 1340,
+      sh: 600,
+      text: "You can aniamate\nthe weight",
+      weight: 100,
+      round: true,
+      multiply: true,
+      drawing: "colorful",
+      color: [["#FFF"]],
+      // colorful: ["#001219", "#005F73", "#0A9396", "#94D2BD", "#E9D8A6","#EE9B00","#CA6702","#BB3E03","#AE2012","#9B2226"],
+      pathGap: 10,
+      patternWidth: 1,
+      patternHeight: 1,
+      speed: 1,
+      tracking: 0,
+      leading: 0,
+      size: 63,
+    },
+    {
+      selector: ".weight",
+      containerParams: { width: "1340px", height: "600px" }
+    }
+  );
+
+  export const trakingClip = new LeonSans.Clip(
+    {
+      canvasId: "leonObj",
+      sw: 1340,
+      sh: 600,
+      text: "Traking leading",
+      weight: 500,
+      round: true,
+      multiply: true,
+      drawing: "colorful",
+      color: [["#FFF"]],
+      // colorful: ["#001219", "#005F73", "#0A9396", "#94D2BD", "#E9D8A6","#EE9B00","#CA6702","#BB3E03","#AE2012","#9B2226"],
+      pathGap: 10,
+      patternWidth: 1,
+      patternHeight: 1,
+      speed: 1,
+      tracking: 0,
+      leading: 0,
+      size: 63,
+    },
+    {
+      selector: ".traking-clip",
+      containerParams: { width: "1340px", height: "600px" }
+    }
+  );
+
+  export const staticClip = new LeonSans.Clip(
+    {
+      canvasId: "leonObj",
+      sw: 1340,
+      sh: 1000,
+      text: "abcdefghijklm\nnopqrstuvwxyz\nABCDEFGHIJK\nLMNOPQRST\nUVWXYZ\n0123456789",
+      weight: 100,
+      round: true,
+      multiply: true,
+      drawing: "colorful",
+      color: [["#FFF"]],
+      // colorful: ["#001219", "#005F73", "#0A9396", "#94D2BD", "#E9D8A6","#EE9B00","#CA6702","#BB3E03","#AE2012","#9B2226"],
+      pathGap: 10,
+      patternWidth: 1,
+      patternHeight: 1,
+      speed: 1,
+      tracking: 0,
+      leading: 0,
+      size: 93,
+    },
+    {
+      selector: ".static-clip",
+      containerParams: { width: "1340px", height: "1500px" }
+    }
+  );
   
+
+  export const moreClip = new LeonSans.Clip(
+    {
+      canvasId: "leonObj2",
+      sw: 1340,
+      sh: 600,
+      text: "  More beautiful\nthings are coming",
+      weight: 500,
+      round: false,
+      multiply: false,
+      drawing: "drawing",
+      color: [["#FFF"]],
+      // colorful: ["#001219", "#005F73", "#0A9396", "#94D2BD", "#E9D8A6","#EE9B00","#CA6702","#BB3E03","#AE2012","#9B2226"],
+      pathGap: 10,
+      patternWidth: 1,
+      patternHeight: 1,
+      speed: 1,
+      tracking: 0,
+      leading: 0,
+      size: 120,
+    },
+    {
+      selector: ".more",
+      containerParams: { width: "1340px", height: "600px" }
+    }
+  );
 
 
   export const completionIncident = (selector,start,end) => new LeonSans.LeonIncident(
@@ -218,7 +336,88 @@ export const scale = (value,selector, duration, easing = "linear") =>
   );
 
 
+  export const weight = (start,end) => new LeonSans.LeonIncident(
+    {
+      animatedAttrs: {
+        LeonAttrs: {
+          weight: end,
+        },
+      },
+      initialValues: {
+        LeonAttrs: {
+          weight: start,
+        },
+      },
+    },
+    {
+      duration: 1000,
+      selector: "!#leonObj",
+      easing:"easeOutCirc"
+    }
+  );
+
+
+  export const leading2 = new LeonSans.LeonIncident(
+    {
+      animatedAttrs: {
+        LeonAttrs: {
+          leading: 2,
+      },
+    },
+    },
+    {
+      duration: 1000,
+      selector: "!#leonObj",
+      easing:"easeOutCirc"
+    }
+  );
+
+
+  export const tracking2 = new LeonSans.LeonIncident(
+    {
+      animatedAttrs: {
+        LeonAttrs: {
+          tracking: 2,
+      },
+    },
+    },
+    {
+      duration: 1000,
+      selector: "!#leonObj",
+      easing:"easeOutCirc"
+    }
+  );
+
+
+  export const size = new LeonSans.LeonIncident(
+    {
+      animatedAttrs: {
+        LeonAttrs: {
+          size: 102,
+      },
+    },
+    },
+    {
+      duration: 1000,
+      selector: "!#leonObj",
+      easing:"easeOutCirc"
+    }
+  );
 
 
 
+  export const pathGap = new LeonSans.LeonIncident(
+    {
+      animatedAttrs: {
+        LeonAttrs: {
+          pathGap: 5,
+      },
+    },
+    },
+    {
+      duration: 1000,
+      selector: "!#leonObj",
+      easing:"easeOutCirc"
+    }
+  );
   

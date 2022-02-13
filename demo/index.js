@@ -63,6 +63,7 @@ window.top.postMessage(
 
 player = new Player({
   clip,
+  timeFormat:"ms",
   ...playerOptions,
   onMillisecondChange: (ms) => {
     window.top.postMessage(
