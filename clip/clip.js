@@ -1,7 +1,7 @@
 import { HTMLClip } from "@donkeyclip/motorcortex";
 import html from "./clip.html";
 import css from "!!raw-loader!./clip.css";
-import { introClip, completionIncident, introIncident2, left, scale, top , blur, height, wmc, widthHeigh, inClip, opacity, bgColor, leading4, weight, weightClip, staticClip, trakingClip, trackingLeading4, tracking2, leading2, pathGap, moreClip} from "./incidents";
+import { introClip, completionIncident, introIncident2, left, scale, top , blur, height, wmc, widthHeigh, inClip, opacity, bgColor, leading4, weight, weightClip, staticClip, trakingClip, trackingLeading4, tracking2, leading2, pathGap, moreClip, subscribeClip} from "./incidents";
 import {  initParams } from "./initParams";
 
 export const clip = new HTMLClip({
@@ -30,6 +30,7 @@ clip.addIncident(weightClip, 0);
 clip.addIncident(trakingClip, 0);
 clip.addIncident(staticClip, 0);
 clip.addIncident(moreClip,0)
+clip.addIncident(subscribeClip,0)
 weightClip.addIncident(completionIncident("!#leonObj",1,1), 0);
 trakingClip.addIncident(completionIncident("!#leonObj",1,1), 0);
 staticClip.addIncident(completionIncident("!#leonObj",1,1), 0);
@@ -52,3 +53,5 @@ weightClip.addIncident(completionIncident("!#leonObj",1,0),10200)
 clip.addIncident(widthHeigh("0px",".gradient-line",1000,"easeInOutExpo"),10200)
 clip.addIncident(opacity(0,".inclip-wrapper,.transition,.intro-wrapper",1),11000)
 moreClip.addIncident(completionIncident("!#leonObj2",0,1), 11000);
+subscribeClip.addIncident(completionIncident("!#leonObj2",0,1), 11000);
+clip.addIncident(opacity(1,".subscribe-button",200),11000)

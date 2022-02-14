@@ -300,6 +300,34 @@ export const scale = (value,selector, duration, easing = "linear") =>
   );
 
 
+  export const subscribeClip = new LeonSans.Clip(
+    {
+      canvasId: "leonObj2",
+      sw: 1340,
+      sh: 600,
+      text: "Subscribe Now",
+      weight: 200,
+      round: false,
+      multiply: false,
+      drawing: "drawing",
+      color: [["#FFF"]],
+      // colorful: ["#001219", "#005F73", "#0A9396", "#94D2BD", "#E9D8A6","#EE9B00","#CA6702","#BB3E03","#AE2012","#9B2226"],
+      pathGap: 10,
+      patternWidth: 1,
+      patternHeight: 1,
+      speed: 1,
+      tracking: 0,
+      leading: 0,
+      size: 90,
+    },
+    {
+      selector: ".subscribe",
+      containerParams: { width: "1340px", height: "600px" }
+    }
+  );
+
+
+
   export const completionIncident = (selector,start,end) => new LeonSans.LeonIncident(
     {
       animatedAttrs: {
