@@ -1,4 +1,4 @@
-import { HTMLClip } from "@donkeyclip/motorcortex";
+import { HTMLClip, setCSSCore } from "@donkeyclip/motorcortex";
 import html from "./clip.html";
 import css from "!!raw-loader!./clip.css";
 import {
@@ -29,6 +29,8 @@ import {
 } from "./incidents";
 import { initParams } from "./initParams";
 import initParamsValidationRules from "./initParamsValidationRules";
+import AnimePluginDefinition from "@donkeyclip/motorcortex-anime";
+// setCSSCore(AnimePluginDefinition.CSSEffect);
 
 export const clip = new HTMLClip({
   html,
@@ -75,7 +77,9 @@ clip.addIncident(
   2500
 );
 clip.addIncident(
-  top("-100%", ".box", 2500, "easeInOutExpo", "@stagger(0, 200)"),
+  top("-100%", ".box", 2500, "easeInOutExpo", "@stagger(0, 200)", {
+    top: "40%",
+  }),
   4500
 );
 clip.addIncident(top("2%", ".weight", 2500, "easeInOutExpo"), 4500);

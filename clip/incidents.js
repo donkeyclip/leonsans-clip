@@ -60,12 +60,20 @@ export const width = (value, selector, duration, easing = "linear") =>
     }
   );
 
-export const top = (value, selector, duration, easing = "linear", delay = 0) =>
+export const top = (
+  value,
+  selector,
+  duration,
+  easing = "linear",
+  delay = 0,
+  initialValues = {}
+) =>
   new CSSEffect(
     {
       animatedAttrs: {
         top: value,
       },
+      initialValues,
     },
     {
       selector,
